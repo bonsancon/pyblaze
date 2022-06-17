@@ -1,0 +1,11 @@
+---
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    image: alvarofpp/app
+    container_name: app
+    volumes:
+      - .:/app
