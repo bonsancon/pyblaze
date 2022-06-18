@@ -1,5 +1,5 @@
 # Variables
-APP_NAME=app
+APP_NAME=pyblaze
 ROOT=$(shell pwd)
 
 ## Lint

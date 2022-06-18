@@ -2,10 +2,10 @@
 version: '3.8'
 
 services:
-  app:
+  pyblaze:
     build:
       context: .
-    image: alvarofpp/app
-    container_name: app
+    image: bonsancon/pyblaze
+    container_name: pyblaze
     volumes:
       - .:/app
