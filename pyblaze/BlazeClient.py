@@ -24,12 +24,6 @@ class BlazeClient:
         if version == 2:
             self._url_api = self.URL_API_V2
 
-    def basic_response_treatment(self, response):
-        if response.status_code == 200:
-            return response.json()
-
-        return response
-
     def _send_request(self, method, url, **kwargs):
         kwargs['headers'] = {
             # See https://fake-useragent.herokuapp.com/browsers/0.1.11
