@@ -17,11 +17,11 @@ jobs:
           | awk -F '/' '{print $2}')" >> $GITHUB_ENV
         shell: bash
       - name: Docker pull
-        run: docker pull alvarofpp/pypi-publish
+        run: docker pull alvarofpp/pypi:publish
       - name: Publish ${{ env.REPOSITORY_NAME }} (${{ github.ref_name }}) to PyPi
         run: |
           docker run --rm \
           -e USER=__token__ \
           -e PASSWORD=${{ secrets.PYPI_API_TOKEN }} \
           -v $(pwd):/app \
-          alvarofpp/pypi-publish
+          alvarofpp/pypi:publish
