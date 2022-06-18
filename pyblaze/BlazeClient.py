@@ -1,4 +1,3 @@
-from fake_useragent import UserAgent
 import requests
 
 
@@ -8,18 +7,24 @@ class BlazeClient:
 
     def __init__(self, version: int = 1):
         self._session = requests.Session()
-        self._user_agent = UserAgent(use_cache_server=False)
+        # See https://fake-useragent.herokuapp.com/browsers/0.1.11
+        # self._user_agent = UserAgent(
+        #     cache=False,
+        # )
         self._set_version(version)
 
     def _set_version(self, version: int) -> None:
         self._url_api = self.URL_API_V1
-        
+
         if version == 2:
             self._url_api = self.URL_API_V2
 
     def _send_request(self, method, url, **kwargs):
         kwargs['headers'] = {
-            'User-Agent': self._user_agent.random,
+            # 'User-Agent': self._user_agent.random,
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) '
+                          'AppleWebKit/537.36 (KHTML, like Gecko) '
+                          'Chrome/41.0.2228.0 Safari/537.36',
         }
         response = self._session.request(method, url, **kwargs)
 
