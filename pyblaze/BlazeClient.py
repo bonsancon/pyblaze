@@ -33,7 +33,7 @@ class BlazeClient:
         }
         return self._session.request(method, url, **kwargs)
 
-    def announcement(self):
+    def announcement(self) -> Announcement:
         response = self._send_request(
             'GET',
             f'{self._url_api}/announcement',
@@ -46,7 +46,7 @@ class BlazeClient:
 
         return Announcement(**response.json())
 
-    def chat_rooms(self):
+    def chat_rooms(self) -> ChatRoomsResponse:
         response = self._send_request(
             'GET',
             f'{self._url_api}/chat_rooms',
@@ -59,7 +59,7 @@ class BlazeClient:
 
         return ChatRoomsResponse(data=response.json())
 
-    def chat_room(self, chat_number: int = 2):
+    def chat_room(self, chat_number: int = 2) -> ChatRoomResponse:
         response = self._send_request(
             'GET',
             f'{self._url_api}/chat_rooms/{chat_number}',
@@ -72,7 +72,7 @@ class BlazeClient:
 
         return ChatRoomResponse(**response.json())
 
-    def country(self):
+    def country(self) -> Country:
         response = self._send_request(
             'GET',
             f'{self._url_api}/country',
@@ -85,7 +85,7 @@ class BlazeClient:
 
         return Country(**response.json())
 
-    def currencies(self):
+    def currencies(self) -> Currencies:
         response = self._send_request(
             'GET',
             f'{self._url_api}/currencies',
@@ -98,7 +98,7 @@ class BlazeClient:
 
         return Currencies(data=response.json())
 
-    def settings(self):
+    def settings(self) -> Settings:
         response = self._send_request(
             'GET',
             f'{self._url_api}/settings',
@@ -111,7 +111,7 @@ class BlazeClient:
 
         return Settings(**response.json())
 
-    def time(self):
+    def time(self) -> Time:
         response = self._send_request(
             'GET',
             f'{self._url_api}/time',
@@ -124,7 +124,7 @@ class BlazeClient:
 
         return Time(**response.json())
 
-    def version(self):
+    def version(self) -> Version:
         response = self._send_request(
             'GET',
             f'{self._url_api}/version',
