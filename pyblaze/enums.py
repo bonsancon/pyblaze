@@ -11,7 +11,8 @@ class DoubleColor(Enum):
     RED = 'red'  # 1
     BLACK = 'black'  # 2
 
-    def mapping(self, color_int: int) -> 'DoubleColor':
+    @staticmethod
+    def create_by_int(color_int: int) -> 'DoubleColor':
         if color_int == 1:
             return DoubleColor.RED
         if color_int == 2:
