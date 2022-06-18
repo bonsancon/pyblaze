@@ -1,0 +1,20 @@
+from enum import Enum
+
+
+class Game(Enum):
+    CRASH = 'crash_games'
+    DOUBLE = 'roulette_games'
+
+
+class DoubleColor(Enum):
+    WHITE = 'white'  # 0
+    RED = 'red'  # 1
+    BLACK = 'black'  # 2
+
+    def mapping(self, color_int: int) -> 'DoubleColor':
+        if color_int == 1:
+            return DoubleColor.RED
+        if color_int == 2:
+            return DoubleColor.BLACK
+
+        return DoubleColor.WHITE
