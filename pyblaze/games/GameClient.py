@@ -20,10 +20,15 @@ class GameClient(BlazeClient):
 
         return self._config['responses']['current'](**response.json())
 
-    def get_game_by_id(self, id: str):
+    def get_game_by_id(self, game_id: str, page: int = None):
+        # Page parameter only works in Double game
+        page_text = ''
+        if page is not None:
+            page_text = f'?page={page}'
+
         response = self._send_request(
             'GET',
-            f'{self._url_api}/{self._game_namespace}/{id}',
+            f'{self._url_api}/{self._game_namespace}/{game_id}{page_text}',
         )
 
         if response.status_code != 200:
