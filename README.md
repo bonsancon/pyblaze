@@ -60,12 +60,13 @@ The package have 3 clients:
 
 | Method                                                      | Description                               |
 |-------------------------------------------------------------|-------------------------------------------|
-| `recent()`                                                  | Get recent results.                       |
 | `current()`                                                 | Get current game.                         |
-| `get_result_by_hash(game_hash)`                             | Get result by the given hash.             |
+| `get_game_by_id(id)`                                        | Get game data by id.                      |
 | `get_previous_game_hash_by_hash(hash_code)`                 | Get previous game hash by the given hash. |
-| `get_previous_n_games_by_hash(hash_code, number_of_games)`  | Get previous N games by the given hash.   |
 | `get_previous_games_to_hash_by_hash(hash_code, hash_match)` | Get previous games to hash.               |
+| `get_previous_n_games_by_hash(hash_code, number_of_games)`  | Get previous N games by the given hash.   |
+| `get_result_by_hash(game_hash)`                             | Get result by the given hash.             |
+| `recent()`                                                  | Get recent results.                       |
 
 **TO DO**: fix Double methods to previous games.
 

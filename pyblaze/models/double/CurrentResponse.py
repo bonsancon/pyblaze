@@ -2,7 +2,7 @@ from typing import List, Union
 
 from pyblaze.enums import DoubleColor
 from pyblaze.models.base import CurrentResponse as BaseModel
-from pyblaze.models.double import CurrentBet
+from pyblaze.models.double import Bet
 
 
 class CurrentResponse(BaseModel):
@@ -14,7 +14,7 @@ class CurrentResponse(BaseModel):
     total_white_bets_placed: int
     total_black_eur_bet: float
     total_black_bets_placed: int
-    bets: List[CurrentBet]
+    bets: List[Bet]
 
     def get_color_name(self) -> str:
         return DoubleColor.create_by_int(self.color).value

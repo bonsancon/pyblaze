@@ -1,7 +1,10 @@
 from pyblaze.enums import Game
 from pyblaze.games import GameClient
 from pyblaze.mixins import Hashable
-from pyblaze.models.crash import CurrentResponse, RecentsResponse, Result
+from pyblaze.models.crash import CurrentResponse, \
+    GetGameByIdResponse, \
+    RecentsResponse, \
+    Result
 
 
 class Crash(GameClient, Hashable):
@@ -19,7 +22,8 @@ class Crash(GameClient, Hashable):
         self._config = {
             'responses': {
                 'current': CurrentResponse,
-                'recents': RecentsResponse,
+                'recent': RecentsResponse,
+                'get_game_by_id': GetGameByIdResponse,
             },
         }
 

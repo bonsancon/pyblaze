@@ -1,7 +1,10 @@
 from pyblaze.enums import DoubleColor, Game
 from pyblaze.games import GameClient
 from pyblaze.mixins import Hashable
-from pyblaze.models.double import CurrentResponse, RecentsResponse, Result
+from pyblaze.models.double import CurrentResponse, \
+    GetGameByIdResponse, \
+    RecentsResponse, \
+    Result
 
 
 class Double(GameClient, Hashable):
@@ -18,7 +21,8 @@ class Double(GameClient, Hashable):
         self._config = {
             'responses': {
                 'current': CurrentResponse,
-                'recents': RecentsResponse,
+                'recent': RecentsResponse,
+                'get_game_by_id': GetGameByIdResponse,
             },
         }
 
