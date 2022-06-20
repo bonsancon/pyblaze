@@ -3,7 +3,7 @@
     "allow_different_nesting": true
   },
   "line-length": {
-    "line_length": 100
+    "line_length": 120
   },
   "no-inline-html": {
     "allowed_elements": ["a", "small", "img"]
