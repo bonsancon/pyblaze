@@ -12,6 +12,7 @@ class Hashable(ABC):
     def get_previous_game_hash_by_hash(self, hash_code: str) -> str:
         sha = hashlib.sha256()
         sha.update(hash_code.encode('utf-8'))
+
         return sha.hexdigest()
 
     def get_previous_games_to_hash_by_hash(self, hash_code: str, hash_match: str = None) -> List:
@@ -39,4 +40,7 @@ class Hashable(ABC):
         hmac_new = hmac.new(str.encode(game_hash), b'', hashlib.sha256)
         hmac_new.update(self.CLIENT_SEED.encode('utf-8'))
         hexadecimal_digits = hmac_new.hexdigest()
-        return self._get_result_by_hexadecimal(hexadecimal_digits)
+        result = self._get_result_by_hexadecimal(hexadecimal_digits)
+        result.hash = game_hash
+
+        return result
