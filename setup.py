@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='bonsancon-pyblaze',
-    version='0.0.5',
+    version='0.0.6',
     author='Álvaro Ferreira Pires de Paiva',
     author_email='alvarofepipa@gmail.com',
     description='Blaze API',
