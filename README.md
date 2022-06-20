@@ -58,10 +58,16 @@ The package have 3 clients:
 
 ### Games
 
-| Method    | Description          | Example            |
-|-----------|----------------------|--------------------|
-| `recents` | Get recents results. | `client.recents()` |
-| `current` | Get current game.    | `client.game()`    |
+| Method                       | Description                             | Example                                                    |
+|------------------------------|-----------------------------------------|------------------------------------------------------------|
+| `recents`                    | Get recents results.                    | `client.recents()`                                         |
+| `current`                    | Get current game.                       | `client.game()`                                            |
+| `get_result_by_hash`         | Get result by the given hash.           | `client.get_result_by_hash(game_hash)`                     |
+| `get_previous_game_hash`     | Get previous game by the given hash.    | `client.get_previous_game_hash(hash_code)`                 |
+| `get_previous_n_games`       | Get previous N games by the given hash. | `client.get_previous_n_games(hash_code, number_of_games)`  |
+| `get_previous_games_to_hash` | Get previous games to hash.             | `client.get_previous_games_to_hash(hash_code, hash_match)` |
+
+**TO DO**: fix Double methods to previous games.
 
 ## Contributing
 
