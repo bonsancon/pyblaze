@@ -15,21 +15,21 @@ class Hashable(ABC):
     def _get_result_by_hexadecimal(self, hexadecimal_digits: str):
         raise NotImplementedError('You must implement the "_get_result_by_hexadecimal" method.')
 
-    def get_previous_game_hash(self, hash_code: str) -> str:
+    def get_previous_game_hash_by_hash(self, hash_code: str) -> str:
         sha = hashlib.sha256()
         sha.update(hash_code.encode('utf-8'))
         return sha.hexdigest()
 
-    def get_previous_n_games(self, hash_code: str, number_of_games: int = 10) -> List:
+    def get_previous_n_games_by_hash(self, hash_code: str, number_of_games: int = 10) -> List:
         results = []
 
         for count in range(number_of_games):
             results.append(self.get_result_by_hash(hash_code))
-            hash_code = self.get_previous_game_hash(hash_code)
+            hash_code = self.get_previous_game_hash_by_hash(hash_code)
 
         return results
 
-    def get_previous_games_to_hash(self, hash_code: str, hash_match: str = None) -> List:
+    def get_previous_games_to_hash_by_hash(self, hash_code: str, hash_match: str = None) -> List:
         if hash_match is None:
             hash_match = self.CLIENT_SEED
 
@@ -37,6 +37,6 @@ class Hashable(ABC):
 
         while hash_code != hash_match:
             results.append(self.get_result_by_hash(hash_code))
-            hash_code = self.get_previous_game_hash(hash_code)
+            hash_code = self.get_previous_game_hash_by_hash(hash_code)
 
         return results
