@@ -60,7 +60,7 @@ The package have 3 clients:
 
 | Method                       | Description                             | Example                                                    |
 |------------------------------|-----------------------------------------|------------------------------------------------------------|
-| `recents`                    | Get recents results.                    | `client.recents()`                                         |
+| `recent`                     | Get recents results.                    | `client.recents()`                                         |
 | `current`                    | Get current game.                       | `client.game()`                                            |
 | `get_result_by_hash`         | Get result by the given hash.           | `client.get_result_by_hash(game_hash)`                     |
 | `get_previous_game_hash`     | Get previous game by the given hash.    | `client.get_previous_game_hash(hash_code)`                 |

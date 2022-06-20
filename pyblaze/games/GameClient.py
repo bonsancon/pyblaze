@@ -7,7 +7,7 @@ class GameClient(BlazeClient):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-    def recents(self):
+    def recent(self):
         response = self._send_request(
             'GET',
             f'{self._url_api}/{self._game_namespace}/recent',
