@@ -45,27 +45,27 @@ The package have 3 clients:
 
 ### BlazeClient
 
-| Method         | Description                    | Example                 |
-|----------------|--------------------------------|-------------------------|
-| `announcement` | Get current announcement.      | `client.announcement()` |
-| `chat_rooms`   | Get chat rooms config.         | `client.chat_rooms()`   |
-| `chat_room`    | Get messages from a chat room. | `client.chat_room(2)`   |
-| `country`      | Get country config.            | `client.country()`      |
-| `currencies`   | Get currencies config.         | `client.currencies()`   |
-| `settings`     | Get Blaze platform settings.   | `client.settings()`     |
-| `time`         | Get time (for what?).          | `client.time()`         |
-| `version`      | Get Blaze platform version.    | `client.version()`      |
+| Method                   | Description                    |
+|--------------------------|--------------------------------|
+| `announcement()`         | Get current announcement.      |
+| `chat_rooms()`           | Get chat rooms config.         |
+| `chat_room(chat_number)` | Get messages from a chat room. |
+| `country()`              | Get country config.            |
+| `currencies()`           | Get currencies config.         |
+| `settings()`             | Get Blaze platform settings.   |
+| `time()`                 | Get time (for what?).          |
+| `version()`              | Get Blaze platform version.    |
 
 ### Games
 
-| Method                       | Description                             | Example                                                    |
-|------------------------------|-----------------------------------------|------------------------------------------------------------|
-| `recent`                     | Get recents results.                    | `client.recents()`                                         |
-| `current`                    | Get current game.                       | `client.game()`                                            |
-| `get_result_by_hash`         | Get result by the given hash.           | `client.get_result_by_hash(game_hash)`                     |
-| `get_previous_game_hash`     | Get previous game by the given hash.    | `client.get_previous_game_hash(hash_code)`                 |
-| `get_previous_n_games`       | Get previous N games by the given hash. | `client.get_previous_n_games(hash_code, number_of_games)`  |
-| `get_previous_games_to_hash` | Get previous games to hash.             | `client.get_previous_games_to_hash(hash_code, hash_match)` |
+| Method                                                      | Description                               |
+|-------------------------------------------------------------|-------------------------------------------|
+| `recent()`                                                  | Get recent results.                       |
+| `current()`                                                 | Get current game.                         |
+| `get_result_by_hash(game_hash)`                             | Get result by the given hash.             |
+| `get_previous_game_hash_by_hash(hash_code)`                 | Get previous game hash by the given hash. |
+| `get_previous_n_games_by_hash(hash_code, number_of_games)`  | Get previous N games by the given hash.   |
+| `get_previous_games_to_hash_by_hash(hash_code, hash_match)` | Get previous games to hash.               |
 
 **TO DO**: fix Double methods to previous games.
 
