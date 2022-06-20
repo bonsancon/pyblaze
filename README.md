@@ -67,6 +67,7 @@ The package have 3 clients:
 | `get_previous_n_games_by_hash(hash_code, number_of_games)`  | Get previous N games by the given hash.   |
 | `get_result_by_hash(game_hash)`                             | Get result by the given hash.             |
 | `recent()`                                                  | Get recent results.                       |
+| `recent_history()`                                          | Get recent results.                       |
 
 **TO DO**: fix Double methods to previous games.
 

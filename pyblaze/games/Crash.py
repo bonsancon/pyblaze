@@ -3,6 +3,7 @@ from pyblaze.games import GameClient
 from pyblaze.mixins import Hashable
 from pyblaze.models.crash import CurrentResponse, \
     GetGameByIdResponse, \
+    RecentHistoryResponse, \
     RecentsResponse, \
     Result
 
@@ -22,8 +23,9 @@ class Crash(GameClient, Hashable):
         self._config = {
             'responses': {
                 'current': CurrentResponse,
-                'recent': RecentsResponse,
                 'get_game_by_id': GetGameByIdResponse,
+                'recent_history': RecentHistoryResponse,
+                'recent': RecentsResponse,
             },
         }
 

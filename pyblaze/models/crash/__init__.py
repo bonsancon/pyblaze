@@ -1,15 +1,20 @@
+# flake8: noqa I100
 from .Bet import Bet
+from .RecentsEntity import RecentsEntity
+from .Record import Record
+from .Result import Result
 from .CurrentResponse import CurrentResponse
 from .GetGameByIdResponse import GetGameByIdResponse
-from .RecentsEntity import RecentsEntity
+from .RecentHistoryResponse import RecentHistoryResponse
 from .RecentsResponse import RecentsResponse
-from .Result import Result
 
 __all__ = [
     'Bet',
+    'RecentsEntity',
+    'Record',
+    'Result',
     'CurrentResponse',
     'GetGameByIdResponse',
-    'RecentsEntity',
+    'RecentHistoryResponse',
     'RecentsResponse',
-    'Result',
 ]

@@ -45,3 +45,16 @@ class GameClient(BlazeClient):
             )
 
         return self._config['responses']['recent'](data=response.json())
+
+    def recent_history(self):
+        response = self._send_request(
+            'GET',
+            f'{self._url_api}/{self._game_namespace}/recent/history',
+        )
+
+        if response.status_code != 200:
+            raise RequestException(
+                f'[{self._game_namespace} - recent_history] Error code {response.status_code}',
+            )
+
+        return self._config['responses']['recent_history'](**response.json())
