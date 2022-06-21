@@ -20,8 +20,12 @@ class Hashable(ABC):
             hash_match = self.CLIENT_SEED
 
         results = []
+        match = False
 
-        while hash_code != hash_match:
+        while not match:
+            if hash_code == hash_match:
+                match = True
+
             results.append(self.get_result_by_hash(hash_code))
             hash_code = self.get_previous_game_hash_by_hash(hash_code)
 
