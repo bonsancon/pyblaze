@@ -14,6 +14,8 @@ class BlazeClient:
     URL_API_V1 = 'https://blaze.com/api'
     URL_API_V2 = 'https://api-v2.blaze.com'
 
+    URL_WSS = 'wss://api-v2.blaze.com/replication/?EIO=3&transport=websocket'
+
     def __init__(self, version: int = 1):
         self._session = requests.Session()
         self._set_version(version)
