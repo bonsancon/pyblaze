@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='bonsancon-pyblaze',
-    version='0.0.9',
+    version='0.0.10',
     author='Álvaro Ferreira Pires de Paiva',
     author_email='alvarofepipa@gmail.com',
     description='Blaze API',
@@ -13,6 +13,10 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     url='https://github.com/bonsancon/pyblaze',
     packages=setuptools.find_packages(),
+    install_requires=[
+        'pydantic>=1.9.1',
+        'requests>=2.28.0',
+    ],
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
